@@ -1,0 +1,54 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loginpage</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/auth.css">
+</head>
+<body>
+        
+</body>
+</html>
+        <main class="Loginpage">
+                <section class="loginSection" id="sideImageSection">
+                        <div class="imageContainer">
+                                <img class="sideImg" id="CodeImage1" src="https://images1.freesion.com/104/85/85131e7357d894ad150de9f7ba928310.png" alt="codeImage1" width="110%">
+                                <img class="sideImg" id="CodeImage2"src="https://fr-images.tuto.net/gallery/158/158721/10707981.jpg" alt="codeImage2" width="30%">
+                                <img class="sideImg" id="CodeImage3"src="https://cdn.educba.com/academy/wp-content/uploads/2020/01/How-to-Use-Node.js-1-4.jpg" alt="codeImage3" width="30%">
+                        </div>       
+                </section>
+                <section class="loginSection" id="formSection">
+                        <div class="Binsta_login">
+                                <h1 class="BinstaTitle">Binsta</h1>
+                                <form class="Binsta_form" action="" method="POST">
+                                        <input class="emailinput" type="email" name="emailadress" placeholder="Email adress">
+                                        <input class="passwordform" type="password" name="password" placeholder="Password">
+                                        <p class="form_error">{{ error }}</p>
+                                        <button class="submitlogin" name="Loginbutton" type="submit">Inloggen</button>
+                                </form>
+                                <div class="or">
+                                        <div></div>
+                                        <div>Of</div>
+                                        <div></div>
+                                </div>
+                                <p class="forgot_password">Wachtwoord vergeten?</p>
+                        </div>
+
+                        <div class="SignupSection">
+                                <span class="pargraph">Geen account? <a class="go_to_signup" href="http://localhost/account/signup">Registreer je dan</a></span>
+                        <div>
+                </section>
+        </main>
+</body>
+</html>
+{% endblock %}
+
+

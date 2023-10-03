@@ -1,0 +1,266 @@
+input[type="file"] {
+  border: none;
+  color: transparent;
+  background: none;
+  width: 170px;
+  cursor: pointer;
+  font-size: 22.5px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+input[type="file"]::before {
+  content: "edit profile";
+  color: black;
+  background: whitesmoke;
+  border-radius: 7.5px;
+  font-weight: 500;
+  opacity: 50;
+  padding: 7.5px 12px 7.5px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+  left: 20px;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  position: relative;
+  right: 8rem;
+  bottom: 0.5rem;
+  z-index: 1;
+  display: none;
+}
+
+
+.settings {
+  margin-left: 14rem;
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.stats_section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgb(169, 169, 169);
+}
+
+.stats_area {
+  display: flex;
+  flex-direction: column;
+  height: 10rem;
+}
+
+.stats_form {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 80%;
+  margin-right: 2rem;
+}
+
+.stats_area:last-child {
+  position: relative;
+}
+
+.info_align {
+  display: flex;
+  flex-direction: row;
+  width: 30rem;
+  align-items: center;
+}
+
+.stats_align {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  left: 8rem;
+  width: 30rem;
+  align-items: center;
+}
+
+
+.username {
+  margin-left: 8rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.profile_button {
+  margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 10px;
+  transition: background-color 300ms ease-in-out;
+}
+
+.profile_button:hover {
+  background-color: rgb(220, 220, 220);
+}
+
+.edit_icon {
+  margin-left: 1rem;
+}
+
+.stats {
+  margin-right: 2.5rem;
+  font-weight: 200;
+  font-size: 15px;
+}
+
+.count_stats {
+  font-weight: bold;
+}
+
+.stats_info {
+  margin-left: 0.5rem;
+}
+
+.picture {
+  border-radius: 110%;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.information_section {
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 5px;
+  margin-top: 1.5rem;
+
+  margin-top: 3rem;
+  padding: 2rem;
+  width: 80%;
+  max-height: 50rem;
+}
+
+.bewerken_title {
+  font-weight: normal;
+  font-size: 17px;
+}
+
+.edit_form {
+  margin-top: 4rem;
+  margin-left: 2rem;
+}
+
+.settings_title {
+  margin-left: 2rem;
+}
+
+.inputForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.user_profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.inputForm > p {
+  font-size: 14px;
+}
+
+.inputs {
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
+}
+
+.description {
+  width: 40%;
+  border: 1px solid lightgray;
+  background-color: rgb(225, 225, 225);
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.user {
+  margin-left: 10px;
+}
+
+.read {
+  width: 60%;
+  font-size: 11px;
+  font-weight: 100;
+  color: rgb(144, 144, 144);
+}
+
+.field {
+  margin-top: 1rem;
+}
+
+.field > label {
+  font-weight: bold;
+  margin-right: 2rem;
+}
+
+.inputs_select {
+  width: 10rem;
+  border: 1px solid lightgray;
+  background-color: whitesmoke;
+  padding: 5px 8px 5px 8px;
+}
+
+.inputs_forms  {
+  border: 1px solid lightgray;
+  background-color: rgb(225, 225, 225);
+  border-radius: 5px;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5px 8px 5px 8px;
+}
+
+.field:nth-child(2) > label {
+  position: relative;
+  bottom: 3rem;
+}
+
+.change_password {
+  font-size: 17px;
+  font-weight: normal;
+  color: gray;
+  margin-top: 2rem;
+  width: 100%;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.read_password {
+  font-size: 13px;
+  color: gray;
+  font-weight: 100;
+}
+
+.save_settings {
+  background-color: rgb(0, 177, 222);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 5rem;
+  height: 1.7rem;
+  transition: font-weight 300ms ease-in-out, 
+  width 400ms ease-in-out, 
+  height 300ms ease-in-out, 
+  font-size 300ms ease-in-out;
+}
+
+.save_settings:hover {
+  font-weight: bold;
+  width: 6rem;
+  height: 2rem;
+  font-size: 16px;
+}
+
+.profile_button {
+  background-color: whitesmoke;
+  border: none;
+}

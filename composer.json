@@ -1,0 +1,18 @@
+{
+    "require": {
+        "twig/twig": "^3.7",
+        "gabordemooij/redbean": "^5.7"
+    },
+    "autoload": {
+        "classmap": [
+            "./controllers/RouterController.php",
+            "./controllers/BinstaController.php",
+            "./controllers/UserController.php",
+            "./controllers/postsController.php",
+            "./model/UserModel.php"
+        ],
+        "files": [
+            "helpers.php"
+        ]
+    }
+}

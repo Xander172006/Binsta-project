@@ -1,0 +1,233 @@
+html {
+  font-size: 1.2rem;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media all and (max-width: 500px) {
+  main {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  
+  .loginSection {
+    width: 80%;
+  }
+
+  .loginSection:first-child {
+    display: none;
+  }
+
+  .loginSection .Binsta_login {
+    border: none;
+  }
+  
+  .submitlogin {
+    width: 13rem;
+  }
+
+}
+
+
+@media all and (min-width: 501px) {
+  .Loginpage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5rem;
+    margin-left: 5rem;
+  }
+
+  .sideImg {
+    border: 3px solid black;
+    border-radius: 10px;
+  }
+
+  #CodeImage1 {
+    position: relative; 
+    z-index: 2;
+    width: 110%;
+    height: 15rem;
+    animation: section-load 800ms ease-out;
+  }
+  
+  #CodeImage2 {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    z-index: 1; 
+    animation: section-load 800ms ease-out;
+  }
+
+  #CodeImage3 {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    z-index: 1;
+    animation: section-load 800ms ease-out;
+  }
+
+  .loginSection {
+    width: 30%;
+    margin: 3%;
+  }
+
+  .loginSection:last-child {
+    margin-top: 1rem;
+    animation: section-load 800ms ease-out;
+  }
+
+  .SignupSection {
+    border: 1px solid rgb(192, 192, 192);
+  }
+
+  .Binsta_form {
+    animation: items-load 800ms ease-out;
+  }
+
+  .submitlogin {
+    width: 14.75rem;
+    
+  }
+
+  @keyframes section-load {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: opacity 800ms ease-out;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes items-load {
+    0% {
+      transform: scale(0);
+    }
+
+    100% {
+      transform: scale(100%);
+    }
+  }
+}
+
+.Binsta_login {
+  border: 1px solid lightgray;
+  padding: 0 2rem 0 2rem;
+}
+
+.SignupSection {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.BinstaTitle {
+  font-family: 'Dancing Script', cursive;
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  margin-bottom: 0;
+  margin-top: 1.5rem;
+}
+
+.Binsta_form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+form > input {
+  border: 1px solid rgb(214, 214, 214);
+  background-color: whitesmoke;
+  border-radius: 2.5px;
+  width: 100%;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  outline: none;
+  font-weight: 100;
+  transition: border 300ms ease-in-out;
+}
+
+form > input::placeholder {
+  color: gray;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+form > input:hover {
+  border: 1.2px solid rgb(0, 177, 236);
+}
+
+.emailinput, .passwordform {
+  margin-bottom: 0.5rem;
+}
+
+.submitlogin {
+  border: none;
+  background: rgb(0, 182, 233);
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  color: white;
+}
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.submitlogin:hover {
+  animation: scaleAnimation 300ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+
+.or {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.or > div:first-child {
+  border-top: 1.25px solid rgb(184, 184, 184);
+  width: 70%;
+  margin-right: 0.5rem
+}
+
+.or > div:last-child {
+  border-top: 1.25px solid rgb(184, 184, 184);
+  width: 70%;
+  margin-left: 0.5rem
+}
+
+.forgot_password {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  color: rgba(1, 52, 112, 0.83);
+}
+
+.go_to_signup {
+  text-decoration: none;
+  color: rgb(0, 156, 223);
+}
+
+.form_error {
+  color: red;
+  font-size: 14px;
+}

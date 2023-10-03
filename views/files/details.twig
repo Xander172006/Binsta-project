@@ -1,0 +1,78 @@
+{% extends 'app.twig' %}
+
+{% block content %}
+<link rel="stylesheet" href="/css/viewProfile.css">
+
+<main class="settings">
+    <section class="stats_section">
+        <form class="stats_form" action="" method="POST" enctype="multipart/form-data">
+            <div class="stats_area">
+                {% if userinfo.profile %}
+                <img class="picture" src="/uploads/{{ userinfo.profile }}" alt="profile_picture" width="150px">
+                {% else %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor"
+                    class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                </svg>
+                {% endif %}
+            </div>
+            <div class="stats_area">
+                <form class="info_align" action="" method="POST">
+                    <h1 class="username">{{ user.gebruikersnaam }}</h1>
+                    <button class="followButton" name="follow" type="submit" onclick="hasFollowed()">Follow</button>
+                </form>
+                <div class="stats_align">
+                    <p class="stats"><span class="count_stats">0</span><span class="stats_info">Comments</span></p>
+                    <p class="stats"><span class="count_stats">{{ likes }}</span><span class="stats_info">Likes</span></p>
+                    <p class="stats"><span class="count_stats">0</span><span class="stats_info">Follows</span></p>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <h1>Posts</h1>
+    <section class="posts_of_user">
+        <div>
+            {% for item in posts %}
+                <img class="postCreated" src="/uploads/posts/{{ item.codeimage }}" alt="postsImages" width="30%" height="240px">
+            {% endfor %}
+        </div>
+    </section>
+
+    <h3 class="about_title">About: {{ user.gebruikersnaam }}
+        {% if userinfo.profile %}
+                <img class="picture" src="/uploads/{{ userinfo.profile }}" alt="profile_picture" width="40px">
+                {% else %}
+                <div class="group_svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                    </svg>
+                    <p>No photo</p>
+                </div>
+            {% endif %}
+    </h3>
+    <section class="details_section">
+        <div>
+            <p class="details_email">email: <span class="emailAdress">{{ user.email }}</span></p>
+            <p class="details_biography">Biagrapy: <span class="biography">{{ userinfo.beschrijving }}</span></p>
+            <p class="details_birth">Birth day: <span class="birth_date">{{ userinfo.datum }}</span></p>
+            <p class="details_developer">Developer: <span class="developer_path">{{ userinfo.developer }}</span></p>
+        </div>
+    </section>
+</main>
+<script>
+
+function hasFollowed()
+{
+    let button = document.querySelector('.followButton');
+    button.disabled = 'true';
+    button.textContent = 'Followed';
+}
+
+</script>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signup form</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/aanmelden.css">
+<main class="Signuppage">
+    <section class="formsection">
+        <div class="Binsta_signup">
+            <h1>Binsta</h1>
+            <p class="why_binsta">Registreer je om foto's van vrienden te bekijken</p>
+            <form class="Binsta_form" action="" method="POST">
+                <input class="usernameinput" type="text" name="username" placeholder="Volledige naam">
+                <input class="emailinput" type="email" name="emailadress" placeholder="e-mailadres">
+                <input class="passwordform" type="password" name="password" placeholder="wachtwoord">
+                <input class="confirminput" type="password" name="confirm" placeholder="herhaal wachtwoord">
+         
+                <p class="form_error">{{ error }}</p>
+                <button class="submitSignup" name="SignupButton" type="submit">aanmelden</button>
+            </form>
+
+        </div>
+
+        <div class="LoginSection">
+            <span class="pargraph">Heb je een account? <a class="go_to_login" href="http://localhost/account/login">Meld je dan aan</a></span></p>
+        </div>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends "app.twig" %}
+
+{% block content %}
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<main class="settings">
+    <section class="stats_section">
+        <form class="stats_form" action="" method="POST" enctype="multipart/form-data">
+            <div class="stats_area">
+                {% if userinfo.profile %}
+                    <img class="picture" src="/uploads/{{ userinfo.profile }}" alt="profile_picture" width="150px">
+                {% else %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor"
+                    class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                </svg>
+                <input type="file" name="editProfile">
+                {% endif %}
+            </div>
+            <div class="stats_area">
+                <div class="info_align">
+                    <h1 class="username">{{ user.gebruikersnaam }}</h1>
+                    <input class="button profile_button" style="border: none;" type="submit" name="submitImage" value="profiel bewerken">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-gear-wide edit_icon" viewBox="0 0 16 16">
+                        <path
+                            d="M8.932.727c-.243-.97-1.62-.97-1.864 0l-.071.286a.96.96 0 0 1-1.622.434l-.205-.211c-.695-.719-1.888-.03-1.613.931l.08.284a.96.96 0 0 1-1.186 1.187l-.284-.081c-.96-.275-1.65.918-.931 1.613l.211.205a.96.96 0 0 1-.434 1.622l-.286.071c-.97.243-.97 1.62 0 1.864l.286.071a.96.96 0 0 1 .434 1.622l-.211.205c-.719.695-.03 1.888.931 1.613l.284-.08a.96.96 0 0 1 1.187 1.187l-.081.283c-.275.96.918 1.65 1.613.931l.205-.211a.96.96 0 0 1 1.622.434l.071.286c.243.97 1.62.97 1.864 0l.071-.286a.96.96 0 0 1 1.622-.434l.205.211c.695.719 1.888.03 1.613-.931l-.08-.284a.96.96 0 0 1 1.187-1.187l.283.081c.96.275 1.65-.918.931-1.613l-.211-.205a.96.96 0 0 1 .434-1.622l.286-.071c.97-.243.97-1.62 0-1.864l-.286-.071a.96.96 0 0 1-.434-1.622l.211-.205c.719-.695.03-1.888-.931-1.613l-.284.08a.96.96 0 0 1-1.187-1.186l.081-.284c.275-.96-.918-1.65-1.613-.931l-.205.211a.96.96 0 0 1-1.622-.434L8.932.727zM8 12.997a4.998 4.998 0 1 1 0-9.995 4.998 4.998 0 0 1 0 9.996z" />
+                    </svg>
+                </div>
+                <div class="stats_align">
+                    <p class="stats"><span class="count_stats">0</span><span class="stats_info">Comments</span></p>
+                    <p class="stats"><span class="count_stats">{{ likes }}</span><span class="stats_info">Likes</span></p>
+                    <p class="stats"><span class="count_stats">0</span><span class="stats_info">Follows</span></p>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <div class="settings_title">
+        <h2>Settings</h2>
+    </div>
+
+    <section class="information_section">
+        <div class="settings_form">
+            <h3 class="bewerken_title">Profiel bewerken</h3>
+        </div>
+        <div class="edit_form">
+            <form class="inputForm" action="" method="POST">
+                <div class="user_profile">
+                    {% if userinfo.profile %}
+                    <img class="picture" src="/uploads/{{ userinfo.profile }}" alt="profile picture" width="40px">
+                    {% else %}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                    </svg>
+                    {% endif %}
+                    <p class="user">{{ user.gebruikersnaam }}</p>
+                    <input type="file" name="editProfile" class="changeProfilePicture" value="edit profile">
+                </div>
+                <p class="read" style="font-size: 12px; font-weight: 100;">Wijzigingen die je hier maakt komen direct op de website te staan.</p>
+
+                <div class="inputs">
+                    <div class="field">
+                        <label for="gebruikersnaam">Naam</label>
+                        <input class="inputs_forms" name="gebruikersnaam" type="text" id="gebruikersnaam" value="{{ user.gebruikersnaam }}">
+                    </div>
+                    <div class="field">
+                        <label for="description">Biografie</label>
+                        <textarea class="description" name="beschrijving" id="description" cols="20" rows="4">{{ userinfo.beschrijving }}</textarea>
+                    </div>
+                    <div class="field">
+                        <label for="datum">Geboorte datum</label>
+                        <input class="inputs_forms" name="geboorte" type="date" id="datum" value="{{ userinfo.datum }}">
+                    </div>
+                    <div class="field">
+                        <label for="developer">Software Developer</label>
+                        <select class="inputs_select" name="software" id="developer">
+                            <option value="Front_end" {% if userinfo.developer == 'Front_end' %}selected{% endif %}>Front-end developer</option>
+                            <option value="Back_end" {% if userinfo.developer == 'Back_end' %}selected{% endif %}>Backend-end developer</option>
+                            <option value="Data" {% if userinfo.developer == 'Data' %}selected{% endif %}>Data-scientist</option>
+                        </select>
+                    </div>
+                    <h4 class="change_password">Wachtwoord veranderen</h4>
+                    <div class="field">
+                        <label for="wachtwoord">Wachtwoord</label>
+                        <input class="inputs_forms" type="password" name="wachtwoord" id="wachtwoord">
+                    </div>
+                    <div class="field">
+                        <label for="new_password">Niew wachtwoord</label>
+                        <input class="inputs_forms" type="password" name="new_wachtwoord" id="new_password">
+                    </div>
+                    <p class="read_password" style="font-size: 12px; font-weight: 100;">Dit is geen onderdeel van je openbare profiel</p>
+                    {{ error }}
+
+                    <button class="save_settings" type="submit" name="change_settings">save</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+<style>
+
+input[type="file"]::before {
+  content: "edit profile";
+  color: black;
+  background: whitesmoke;
+  border-radius: 7.5px;
+  font-weight: 500;
+  opacity: 50;
+  padding: 7.5px 12px 7.5px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+  left: 20px;
+}
+
+</style>
+{% endblock %}

@@ -1,0 +1,183 @@
+html {
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.formsection, .Binsta_form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media all and (min-width: 501px) {
+    .Signuppage {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        animation: section-load 800ms ease-out;
+    }
+
+    @keyframes section-load {
+        0% {
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: opacity 800ms ease-out;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .Binsta_signup {
+        border: 1px solid rgb(184, 184, 184);
+        padding: 1.5rem;
+        padding-top: 0;
+    }
+    
+    h1 {
+        font-family: 'Dancing Script', cursive;
+        display: flex;
+        justify-content: center;
+        font-size: 3rem;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .Binsta_form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Binsta_form > input {
+        padding: 10px;
+        width: 80%;
+        margin-top: 0.5rem;
+        border: 1px solid rgb(182, 182, 182);
+        background-color: whitesmoke;
+        border-radius: 5px;
+        outline: none;
+        transition: border 300ms ease-in-out;
+        animation: form-load 800ms ease-out;
+    }
+
+    .Binsta_form > input:hover {
+        border: 1.2px solid rgb(0, 177, 236);
+    }
+
+    .submitSignup {
+        margin-top: 0.5rem;
+        border: none;
+        background-color: rgb(0, 182, 233);
+        padding: 10px;
+        border-radius: 10px;
+        color: white;
+        width: 86%;
+        animation: form-load 800ms ease-out;
+    }
+
+    @keyframes form-load {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(100%);
+        }
+    }
+
+    .LoginSection {
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        border: 1px solid rgb(182, 182, 182);
+        margin-top: 0.5rem;
+        align-items: center;
+        padding: 0.75rem;
+    }
+}
+
+.go_to_login {
+    text-decoration: none;
+    color: rgb(0, 134, 206);
+}
+
+
+
+@media all and (max-width: 500px) {
+    .Signuppage {
+        display: flex;
+        justify-content: center;
+    }
+
+    .Binsta_signup {
+        padding: 1.5rem;
+        padding-top: 0;
+    }
+    
+    h1 {
+        font-family: 'Dancing Script', cursive;
+        display: flex;
+        justify-content: center;
+        font-size: 3rem;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    .why_binsta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 17px;
+        color: rgb(93, 93, 93);
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .Binsta_form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Binsta_form > input {
+        padding: 10px;
+        width: 80%;
+        margin-top: 0.5rem;
+        border: 1px solid rgb(182, 182, 182);
+        background-color: whitesmoke;
+        border-radius: 5px;
+        outline: none;
+        transition: border 300ms ease-in-out;
+    }
+
+    .Binsta_form > input:hover {
+        border: 1.2px solid rgb(0, 177, 236);
+    }
+
+    .submitSignup {
+        margin-top: 0.5rem;
+        border: none;
+        background-color: rgb(0, 182, 233);
+        padding: 10px;
+        border-radius: 10px;
+        color: white;
+        width: 86%;
+    }
+
+    .LoginSection {
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        margin-top: 0.5rem;
+        align-items: center;
+        padding: 0.75rem;
+    }
+}
+
+.form_error {
+    color: red;
+    font-size: 14px;
+}

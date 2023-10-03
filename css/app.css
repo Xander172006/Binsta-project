@@ -1,0 +1,753 @@
+.applicationBody {
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 0.65rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: none;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #00B7E0;
+    border-radius: 10px;
+    height: 20px;
+}
+
+.buttonLink {
+    background: none;
+    border: none;
+}
+
+.navbar {
+    position: fixed;
+    background-color: white;
+    border-right: 1px solid rgb(172, 172, 172);
+    transition: width 600ms ease;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.icon_svg {
+    color: #0393b4;
+    transition: 600ms ease;
+}
+
+.navbar_nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.nav_item {
+    width: 100%;
+}
+
+.nav_item:last-child {
+    margin-top: auto;
+    transition: background-color 600ms ease-in-out;
+}
+
+.nav_link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: black;
+    text-decoration: none;
+    filter: grayscale(80%) opacity(0.9);
+    transition: background-color 600ms ease-in-out;
+    transition: padding-left 250ms ease-in;
+}
+
+.nav_link:hover {
+    filter: grayscale(0%) opacity(1);
+    background-color: whitesmoke;
+    font-weight: bold;
+    padding-left: 0.5rem;
+    font-weight: bold;
+}
+
+.logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Dancing Script', cursive;
+    margin-bottom: 1rem;
+    color: black;
+    align-items: center;
+}
+
+.link_text {
+    display: none;
+    opacity: 0.5;
+    transition: opacity 1s ease-in-out;
+    padding-left: 5px;
+}
+
+.nav_link > svg {
+    min-width: 2rem;
+    margin: 0 1.5rem;
+    padding: 0 0rem;
+}
+
+.nav_link > .icon_svg {
+    min-width: 2rem;
+    margin: 0 1.5rem;
+    transition: color 300ms ease-in-out;
+}
+
+.nav_item:hover .icon_svg {
+    color: rgb(1, 164, 201);
+}
+
+.nav_item:hover {
+    background-color: whitesmoke;
+}
+
+.nav_item:last-child:hover {
+    background-color: whitesmoke;
+}
+
+.navbar:hover {
+    width: 14rem;
+}
+
+.navbar .link_text {
+    opacity: 0;
+    padding-left: 0;
+    transition: opacity 1s ease-in-out, padding-left 1s ease-in-out;
+}
+
+.navbar:hover .link_text {
+    opacity: 1;
+    padding-left: 0.5rem;
+    transition: opacity 1s ease-in-out, padding-left 1s ease-in-out;
+}
+
+.Logout {
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 500px) {
+    .navbar {
+        position: fixed; /* Add position: fixed to keep it at the bottom */
+        bottom: 0;
+        width: 100%;
+        height: 5rem;
+        z-index: 9999; /* Add a high z-index to ensure it appears above other elements */
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .navbar_nav {
+        flex-direction: row;
+    }
+
+    .nav_link {
+        justify-content: center;
+    }
+
+    .SearchContainer {
+        display: none;
+        position: relative;
+        left: 25%;
+        background-color: white;
+        padding: 1.5rem;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        transition: width 600ms ease-in-out;
+    }
+    
+    .hold_group {
+        display: flex;
+    }
+    
+    
+    .Searchform {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .SearchInput {
+        border: none;
+        background: whitesmoke;
+        padding: 0.75rem 0.5rem 0.75rem 0.5rem;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        outline: none;
+    }
+    
+    .SearchInput::placeholder {
+        font-weight: 100;
+    }
+    
+    .SearchSubmitButton {
+        background-color: rgb(0, 194, 237);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-left: 1rem;
+    }
+    
+    .founded_users {
+        background: none;
+        border: none;
+    }
+    
+    .group_search_toggle {
+        display: flex;
+        align-items: center;
+    }
+    
+    .searchbarButton {
+        border: none;
+        background-color: rgb(0, 194, 237);
+        color: white;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    
+    .items_found {
+        list-style: none;
+        display: flex;
+        justify-content: start;
+        position: relative;
+        top: 0.5rem;
+        right: 4.75rem;
+    }
+
+    .group_searchform {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .profile_found {
+        border-radius: 100%;
+    }
+    
+    .results_found {
+        display: flex;
+        align-items: center;
+    }
+    
+    .found_name {
+        font-size: 14px;
+        margin-left: 0.5rem;
+    }
+    
+    .app_main {
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+        width: 100%;
+        margin-top: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+    .users_section {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 1rem;
+        width: 240%;
+    }
+
+    .userActive {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .group_user {
+        margin-left: 1rem;
+    }
+
+    .loggedIn_user_name {
+        position: relative;
+        bottom: 1rem;
+    }
+
+    .active_users {
+        width: 50%;
+        padding: 1rem;
+        border: 2px solid lightgray;
+        border-radius: 10px;
+    }
+
+    .available_users {
+        display: flex;
+        justify-content: space-between;
+        color: gray;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid gray;
+    }
+
+    .view_all {
+        color: black
+    }
+
+    .members_of_binsta {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .members_of_binsta > svg, .members_of_binsta > img {
+        position: relative;
+        bottom: 0.5rem;
+        margin-right: 1rem;
+        border-radius: 100%;
+    }
+
+    .group_activeUsers > p:last-child {
+        position: relative;
+        bottom: 1rem;
+    }
+
+    .diplsaySection {
+        margin-top: 3rem;
+        border: 1px solid gray;
+        width: 240%;
+    }
+
+    .username_profile {
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .username_profile > p {
+        margin-left: 1rem;
+    }
+
+    .ImageContainer {
+        margin: 0;
+        padding: 0;
+    }
+
+    .Likes {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .LikeButton {
+        background: none;
+        border: none;
+    }
+
+    .information_post {
+        padding: 1rem;
+    }
+
+    .time_of_post {
+        color: gray;
+    }
+
+    .post_title {
+        font-weight: 600;
+    }
+
+    .post_language {
+        font-weight: normal;
+        color: rgb(0, 161, 230);
+    }
+
+    .add_comment_form {
+        padding-bottom: 2rem;
+    }
+
+    .write_input {
+        padding: 2rem;
+        width: 80%;
+        font-size: 18px;
+        outline: none;
+        border: 1px solid gray;
+    }
+
+    .write_input::placeholder {
+        font-size: 20px;
+        color: black;
+    }
+
+    .comment_button {
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(0, 161, 230);
+        color: white;
+        padding: 2rem;
+        font-size: 20px;
+    }
+}
+
+
+
+@media only screen and (min-width: 600px) {
+    .navbar {
+        top: 0;
+        width: 6.5rem;
+        height: 100vh;
+    }
+
+    .navbar:hover {
+        width: 12rem;
+    }
+
+    .title {
+        font-size: 30px;
+        color: black;
+        margin-bottom: 0;
+    }
+
+    .diplsaySection {
+        animation: post-load 800ms ease-out;
+    }
+
+    .link_text {
+        display: none;
+    }
+
+    .navbar:hover .link_text {
+        display: block;
+    }
+
+    .SearchContainer {
+        display: none;
+        position: relative;
+        left: 25%;
+        background-color: white;
+        padding: 1.5rem;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        transition: width 600ms ease-in-out;
+    }
+    
+    .hold_group {
+        display: flex;
+    }
+    
+    
+    .Searchform {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .SearchInput {
+        border: none;
+        background: whitesmoke;
+        padding: 0.75rem 0.5rem 0.75rem 0.5rem;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        outline: none;
+    }
+    
+    .SearchInput::placeholder {
+        font-weight: 100;
+    }
+    
+    .SearchSubmitButton {
+        background-color: rgb(0, 194, 237);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-left: 1rem;
+    }
+    
+    .founded_users {
+        background: none;
+        border: none;
+    }
+    
+    .group_search_toggle {
+        display: flex;
+        align-items: center;
+    }
+    
+    .searchbarButton {
+        border: none;
+        color: rgb(0, 194, 237);
+        color: white;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    
+    .active_users {
+        border: 1px solid lightgray;
+        height: 50%;
+        padding-top: 5%;
+        margin-top: 0;
+    }
+
+    .items_found {
+        list-style: none;
+        display: flex;
+        justify-content: start;
+        position: relative;
+        top: 0.5rem;
+        right: 4.75rem;
+    }
+
+    .group_searchform {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .profile_found {
+        border-radius: 100%;
+    }
+    
+    .results_found {
+        display: flex;
+        align-items: center;
+    }
+    
+    .found_name {
+        font-size: 14px;
+        margin-left: 0.5rem;
+    }
+    
+    .LikeButton {
+        border: none;
+        background: none;
+    }
+    
+    .ViewButton {
+        border: none;
+        background: none;
+        display: flex;
+        align-items: center;
+        border-radius: 7.5px;
+        width: 100%;
+        transition: background-color 400ms ease-in-out;
+    }
+    
+    .ViewButton:hover {
+        background-color: whitesmoke;
+        width: 100%;
+        border-radius: 7.5px;
+    }
+
+    .picture {
+        margin-left: 15px;
+    }
+
+    .app_main {
+        margin-left: 13rem;
+        margin-top: 1.5rem;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .post_title {
+        font-weight: 600;
+        margin-top: 0;
+    }
+
+    .post_language {
+        font-weight: normal;
+        color: rgb(0, 191, 255);
+    }
+
+    .user_posts {
+        border: 1px solid lightgray;
+        border-radius: 10px;
+        width: 90%;
+        margin-bottom: 2rem;
+    }
+
+    .time_of_post {
+        color: gray;
+    }
+
+    .username_profile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0.5rem;
+    }
+
+    .username_profile > p {
+        margin-left: 1rem;
+    }
+
+    .Imageupload {
+        width: 100%;
+        height: 18rem;
+    }
+
+    .Likes {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .information_post {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .users_section {
+        margin-left: 2rem;
+        border: 1px solid lightgray;
+        width: 35%;
+        border-radius: 10px;
+        height: 20%;
+        position: fixed;
+        left: 62%;
+    }
+
+    .userActive {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .group_user > p {
+        position: relative;
+        bottom: 1.3rem;
+    }
+
+    .add_comment_form {
+        width: 100%;
+    }
+
+    .group_user > h1 {
+        font-size: 20px;
+    }
+
+    .comment_input {
+        width: 78%;
+        padding: 1rem;
+        border: none;
+        outline: none;
+        transition: border 300ms ease-in-out;
+    }
+
+    .comment_input:hover {
+        border: 1px solid rgb(0, 190, 238);
+    }
+
+    .group_user {
+        margin-left: 1rem;
+        position: relative;
+        top: 0.5rem;
+    }
+
+    .comment_button {
+        color: rgb(0, 155, 245);
+        border: none;
+        background: none;
+        padding: 1rem;
+        transition: font-weight 300ms ease-in-out, font-size 300ms ease-in-out;
+    }
+
+    .loggedIn_user_name {
+        color: gray;
+        font-size: 14px;
+    }
+
+    .users_section {
+        animation: user-load 800ms ease-out;
+    }
+
+    .comment_button:hover {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .available_users {
+        font-size: 15px;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: gray;
+    }
+
+    .view_all {
+        font-size: 14px;
+        color: black;
+    }
+
+    .members_of_binsta {
+        padding: 0;
+        padding-left: 0.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 3rem;
+    }
+
+    .follow_link {
+        position: relative;
+        bottom: 1rem;
+    }
+
+    .member {
+        font-weight: 600;
+    }
+
+    .group_activeUsers {
+        position: relative;
+        font-size: 14px;
+    }
+
+    .photo {
+        border-radius: 100%;
+        position: relative;
+        bottom: 0.5rem;
+        margin-right: 1rem;
+    }
+
+    .no_profile_icon {
+        position: relative;
+        bottom: 0.5rem;
+        margin-right: 1rem;
+    }
+
+    .link_text:last-child {
+        margin-left: 10px;
+    }
+
+    .items_found {
+        margin-left: 2rem;
+    }
+
+    @keyframes post-load {
+        0% {
+            opacity: 0;
+            transition: opacity 800ms ease-out;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes user-load {
+        0% {
+            opacity: 0;
+            transition: opacity 800ms ease-out;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+}
